@@ -9,7 +9,7 @@ kol_raz = 0
 #
 while kol_raz < 6:
     user_variant = input()
-
+##
     modul = math.fabs(int(user_variant) - PC_rendom)
     # print(f'число:  {PC_rendom} ')
     if int(user_variant) == PC_rendom:
@@ -38,3 +38,4 @@ while kol_raz < 6:
             print(f'очень очень!!!!!! +-1, еще остались {altog} попытok')
             continue
         print(f' еще остались {altog} попытok')
+###
