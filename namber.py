@@ -34,14 +34,18 @@ while pal > 1:
                     Rule1_3 = 0  # ввод заканчивается и выходим из цикла коректировки 1-3
             if pal == 3:
                 if input_number_player == 3:
-                    print("Введите допустимое значение от 1-2")
-                    Rule1_3 = 1
-                elif input_number_player >= 1 and input_number_player <= 2:
+                    print(f"Игрок {name} проиграл")
+                    break
+
+                elif input_number_player == 2:
+                    print('f"Игрок {name} win')
+
+                elif input_number_player == 1:
                         Rule1_3 = 0
             if pal == 2:
                 if input_number_player == 2:
-                    print("вы можете вытянуть только 1 палочку")
-                    Rule1_3 = 1
+                    print(f"Игрок {name} проиграл")
+                    break
                 elif input_number_player == 1:
                     print('правило 1-1 выполнено')
                     Rule1_3 = 0  # ввод заканчивается и выходим из цикла коректировки 1-1
