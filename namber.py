@@ -14,7 +14,7 @@ else:
     print(f"Первый вытягивает {name2}")
     turn_players = [name2, name1]
 
-AllRule=0
+
 ##############################################################
 # Вводные данные:
 
@@ -33,36 +33,45 @@ while pal > 1:
                     print('правило 1-3 выполнено')
                     Rule1_3 = 0  # ввод заканчивается и выходим из цикла коректировки 1-3
             if pal == 3:
-                if input_number_player == 3:
-                    print(f"Игрок {name} проиграл")
-                    break
-
-                elif input_number_player == 2:
-                    print('f"Игрок {name} win')
-
-                elif input_number_player == 1:
-                        Rule1_3 = 0
+                if input_number_player == 3 or input_number_player > 3:
+                    print("Если палок 3/ и введено 3 или более / Введите допустимое значение от 1-2")
+                    Rule1_3 = 1
+                elif input_number_player >= 1 and input_number_player <= 2:
+                    Rule1_3 = 0
+                else:
+                    print("Если палок 3/ и введено 3 или более / Введите допустимое значение от 1-2")
+                    Rule1_3 = 1
             if pal == 2:
-                if input_number_player == 2:
-                    print(f"Игрок {name} проиграл")
-                    break
+                if input_number_player == 3:
+                    print("Если палок 2 и введено вытянуть 3 /вы можете вытянуть только 1 палочку")
+                    Rule1_3 = 1
+                elif input_number_player == 2:
+                    print("Если палок 2 /вы можете вытянуть только 1 палочку")
+                    Rule1_3 = 1
                 elif input_number_player == 1:
-                    print('правило 1-1 выполнено')
+
                     Rule1_3 = 0  # ввод заканчивается и выходим из цикла коректировки 1-1
-                    print(f"Віиграл {name}")
+                    print(f"Віиграл 1111 {name}")
                     break
-            if pal == 1:  # на всякий случай
-                print('проиграл игрок:')
-                print(name)
-                break
+                else:
+                    print("Если палок 2 /вы можете вытянуть только 1 палочку")
+                    Rule1_3 = 1
+            #if pal == 1:  # на всякий случай
+                #    print(' Если палок 1 /проиграл игрок:')
+                #    print(name)
+            #    break
         pal = pal - input_number_player
+        print(f'происзвели отнимание и остаток:{pal}')
+
         if pal <= 1:
             print('выиграл')
             print(name)
             break
+
 
         else:
             print(f'остаток:{pal}')
             print(f'тянул:{name}')
             Rule1_3=1
             continue
+
